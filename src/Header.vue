@@ -246,7 +246,7 @@ export default {
     this.localPercent = this.root.state.options.taskList.percent;
     this.sliderOptions.xScale.value = this.root.state.options.times.timeZoom;
     this.style = this.root.mergeDeep({}, defaultStyle, this.dynamicStyle);
-    this.opts = this.root.mergeDeep({}, defaultOptions, this.options);
+    this.opts = this.root.mergeDeep({}, defaultOptions, this.root.state.options);
   },
   methods: {
     getImage() {
