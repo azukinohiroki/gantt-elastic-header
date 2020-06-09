@@ -33,6 +33,13 @@
       <button
         class="gantt-elastic__header-btn-recenter"
         :style="{ ...style['header-btn-recenter'] }"
+        @click.prevent="reloadPage"
+      >
+      reload
+      </button>
+      <button
+        class="gantt-elastic__header-btn-recenter"
+        :style="{ ...style['header-btn-recenter'] }"
         @click.prevent="recenterPosition"
       >
         {{ opts.locale.Now }}
@@ -258,6 +265,9 @@ export default {
         link.click();
         document.body.removeChild(link);
       });
+    },
+    reloadPage() {
+      this.$router.go({path: this.opts.locale.reloadPath, force: true});
     },
     recenterPosition() {
       this.root.$emit("recenterPosition");
